@@ -31,14 +31,17 @@ function changeLanguage(lang) {
 }
 
 // Language selector
-document.getElementById('language-selector').addEventListener('change', (e) => {
-  changeLanguage(e.target.value);
-});
+const langSelector = document.getElementById('language-selector');
+if (langSelector) {
+  langSelector.addEventListener('change', (e) => {
+    changeLanguage(e.target.value);
+  });
 
-// Load saved language or default
-const savedLang = localStorage.getItem('preferred-language') || 'en';
-document.getElementById('language-selector').value = savedLang;
-changeLanguage(savedLang);
+  // Load saved language or default
+  const savedLang = localStorage.getItem('preferred-language') || 'en';
+  langSelector.value = savedLang;
+  changeLanguage(savedLang);
+}
 
 // Track Calendly clicks (Google Analytics)
 document.addEventListener('DOMContentLoaded', function() {
