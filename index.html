@@ -778,7 +778,7 @@
         form.method = 'POST';
         form.action = GOOGLE_SHEETS_URL;
         form.target = 'hidden_iframe';
-        
+
         for (let key in data) {
             const input = document.createElement('input');
             input.type = 'hidden';
@@ -786,7 +786,7 @@
             input.value = data[key];
             form.appendChild(input);
         }
-        
+
         let iframe = document.getElementById('hidden_iframe');
         if (!iframe) {
             iframe = document.createElement('iframe');
@@ -795,10 +795,15 @@
             iframe.style.display = 'none';
             document.body.appendChild(iframe);
         }
-        
+
         document.body.appendChild(form);
         form.submit();
         document.body.removeChild(form);
+    }
+
+    // ===== FONCTION FERMER POPUP =====
+    function closeExitPopup() {
+        document.getElementById('exit-popup').style.display = 'none';
     }
 
     // ===== INITIALISATION =====

@@ -28,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Coconat Pro', 'Cormorant Garamond', serif;
+    font-family: 'Coconat Pro', sans-serif;
     color: var(--black);
     line-height: 1.7;
     font-size: 16px;
