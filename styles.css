@@ -3,6 +3,10 @@
    Inspired by Aman.com
    ======================================== */
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/coconat-pro');
+
 :root {
     --white: #FFFFFF;
     --off-white: #FAFAFA;
@@ -24,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Coconat Pro', 'Cormorant Garamond', serif;
     color: var(--black);
     line-height: 1.7;
     font-size: 16px;
@@ -543,42 +547,81 @@ img {
 .footer {
     padding: 80px 0 40px;
     border-top: 1px solid var(--mid-grey);
+    background: var(--off-white);
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
-    gap: 60px;
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 60px;
+    gap: 60px;
 }
 
-.footer-logo {
+.footer-brand h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-}
-
-.footer-col p {
-    color: var(--dark-grey);
-    font-size: 14px;
-}
-
-.footer-col h4 {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.footer-col a {
-    display: block;
-    font-size: 14px;
-    color: var(--dark-grey);
+    letter-spacing: 0.05em;
     margin-bottom: 12px;
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: var(--dark-grey);
+    margin-bottom: 8px;
+}
+
+.footer-location {
+    font-size: 14px;
+    color: var(--dark-grey);
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+.footer-email {
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-email:hover {
+    opacity: 0.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--mid-grey);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--black);
+}
+
+.footer-social a:hover {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
 }
 
 .footer-bottom {
@@ -647,9 +690,17 @@ img {
         grid-template-columns: 1fr;
     }
     
-    .footer-content {
-        grid-template-columns: 1fr;
+    .footer-main {
+        flex-direction: column;
         gap: 40px;
+    }
+
+    .footer-contact {
+        text-align: left;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
     }
 }
 /* Photo Showcase */
