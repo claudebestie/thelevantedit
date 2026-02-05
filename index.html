@@ -110,7 +110,10 @@
     <nav class="nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="#home">The Levant Edit</a>
+                <a href="#home" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="logo.png" alt="The Levant Edit Logo" style="height: 32px; width: auto;">
+                    <span>The Levant Edit</span>
+                </a>
             </div>
             <div class="nav-mobile-toggle">
                 <span></span>
@@ -135,13 +138,13 @@
         </div>
         <div class="hero-content">
             <span class="hero-badge">200+ Transformations | +182% Avg Revenue</span>
-            <h1>Levantine Design<br>for Modern Spaces</h1>
-            <p class="hero-subtitle">The complete Tel Aviv Airbnb design guide. Authentic style that justifies premium pricing.</p>
+            <h1>Transform Your Airbnb<br>Into a Guest Magnet</h1>
+            <p class="hero-subtitle">Boost your bookings with our proven Levantine design system — choose the DIY guide or our expert consulting services.</p>
             <div class="hero-cta">
                 <a href="https://thelevantedit.gumroad.com/l/airbnbinisrael" class="btn-primary gumroad-button" data-gumroad-single-product="true">
-                    Download Guide — $35
+                    Get the Guide — $35
                 </a>
-                <a href="#preview" class="btn-secondary">See Inside →</a>
+                <a href="#services" class="btn-secondary">Consulting Services →</a>
             </div>
             <div class="hero-trust">
                 <span>⭐⭐⭐⭐⭐ 4.9/5</span>
@@ -807,25 +810,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Site chargé');
         
-        // ===== FAQ ACCORDION =====
-        const faqButtons = document.querySelectorAll('.faq-question');
-        console.log('📋 FAQ trouvées:', faqButtons.length);
-        
-        faqButtons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const faqItem = this.closest('.faq-item');
-                const wasOpen = faqItem.classList.contains('open');
-                
-                document.querySelectorAll('.faq-item').forEach(function(item) {
-                    item.classList.remove('open');
-                });
-                
-                if (!wasOpen) {
-                    faqItem.classList.add('open');
-                }
-            });
-        });
+        // FAQ is handled in app.js
 
         // ===== EXIT INTENT =====
         let exitShown = false;

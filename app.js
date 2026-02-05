@@ -77,7 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('FAQ buttons found:', faqButtons.length);
 
   faqButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('FAQ clicked');
+
       const faqItem = this.closest('.faq-item');
       const wasOpen = faqItem.classList.contains('open');
 
@@ -89,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Toggle current FAQ
       if (!wasOpen) {
         faqItem.classList.add('open');
+        console.log('FAQ opened');
       }
     });
   });
