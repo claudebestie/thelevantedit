@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function() {
       const linkText = this.textContent.trim();
       const linkHref = this.href;
-      
+
       // Determine which consultation type
       let consultationType = 'unknown';
       if (linkHref.includes('30min')) {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (linkHref.includes('full-transformation')) {
         consultationType = 'full_transformation';
       }
-      
+
       // Send event to Google Analytics
       if (typeof gtag !== 'undefined') {
         gtag('event', 'calendly_click', {
@@ -68,6 +68,27 @@ document.addEventListener('DOMContentLoaded', function() {
           'event_label': consultationType,
           'value': consultationType === 'quick_audit' ? 147 : (consultationType === 'transformation_plan' ? 397 : 1297)
         });
+      }
+    });
+  });
+
+  // FAQ Accordion
+  const faqButtons = document.querySelectorAll('.faq-question');
+  console.log('FAQ buttons found:', faqButtons.length);
+
+  faqButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const faqItem = this.closest('.faq-item');
+      const wasOpen = faqItem.classList.contains('open');
+
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach(function(item) {
+        item.classList.remove('open');
+      });
+
+      // Toggle current FAQ
+      if (!wasOpen) {
+        faqItem.classList.add('open');
       }
     });
   });
